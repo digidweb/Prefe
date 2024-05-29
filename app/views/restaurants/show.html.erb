@@ -5,4 +5,4 @@
 <h4>Estrelas: <%= @restaurant.stars %></h4>
 
 <%= link_to "Edite este restaurante", edit_restaurant_path(@restaurant) %>
-<%= link_to "Apague este restaurante", restaurant_path(@restaurant) , method: :delete %>
+<%= link_to "Apague este restaurante", restaurant_path(@restaurant) , data: { turbo_method: :delete } %>
