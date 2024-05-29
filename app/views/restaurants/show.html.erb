@@ -1,5 +1,8 @@
-<h1>Info do Restaurante</h1>
+<h1>Infomações do restaurante</h1>
 
-<p>Nome: <%= @restaurant.name %></p>
-<p>Endereço: <%= @restaurant.address %></p>
-<p>Estrelas: <%= @restaurant.stars %></p>
+<h4>Nome: <%= @restaurant.name %></h4>
+<h4>Endereço: <%= @restaurant.address %></h4>
+<h4>Estrelas: <%= @restaurant.stars %></h4>
+
+<%= link_to "Edite este restaurante", edit_restaurant_path(@restaurant) %>
+<%= link_to "Apague este restaurante", restaurants_path, method: :delete %>
