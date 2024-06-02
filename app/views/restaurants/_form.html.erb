@@ -1,6 +1,6 @@
 <%= simple_form_for(@restaurant) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :stars %>
+  <%= f.input :name, label: "Nome", placeholder: "Somente letras" %>
+  <%= f.input :address, label: "Endereço" %>
+  <%= f.input :stars, label: "Estrelas", collection: [1, 2, 3, 4, 5]  %>
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>
