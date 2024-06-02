@@ -1,8 +1,15 @@
-<h1>Infomações do restaurante</h1>
+<div class="mt-5">
+  <h1>Infomações do restaurante</h1>
+</div>
 
-<h4>Nome: <%= @restaurant.name %></h4>
-<h4>Endereço: <%= @restaurant.address %></h4>
-<h4>Estrelas: <%= @restaurant.stars %></h4>
+<div class="mt-5">
+  <h4>Nome: <%= @restaurant.name %></h4>
+  <h4>Endereço: <%= @restaurant.address %></h4>
+  <h4>Estrelas: <%= @restaurant.stars %></h4>
+</div>
 
-<%= link_to "Edite este restaurante", edit_restaurant_path(@restaurant), class: 'btn btn-primary' %>
-<%= link_to "Apague este restaurante", restaurant_path(@restaurant), data: { turbo_method: :delete }, class: 'btn btn-primary' %>
+<div class="mt-5">
+  <%= link_to "Edite este restaurante", edit_restaurant_path(@restaurant), class: 'btn btn-primary' %>
+  <%= link_to "Apague este restaurante", restaurant_path(@restaurant), data: { turbo_method: :delete }, class: 'btn btn-primary' %>
+  <%= link_to "Veja a lista", restaurants_path, class: 'btn btn-primary' %>
+</div>
