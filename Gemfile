@@ -52,6 +52,10 @@ gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
 gem "kaminari", "~> 1.2"
 gem "faker", "~> 3.4"
+gem "redis", "~> 5.2"
+gem "redis-client", "~> 0.22.2"
+gem "sidekiq", "~> 7.2"
+gem "sidekiq-failures", "~> 1.0"
 
 group :development, :test do
   gem "dotenv-rails"
