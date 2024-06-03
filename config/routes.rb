@@ -1,6 +1,12 @@
+require "sidekiq/web"
+
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
+
+  authenticate :user, ->(user) { user.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get 'restaurants', to: 'restaurants#index'
   get 'restaurants/new', to: 'restaurants#new'
@@ -15,4 +21,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
 end
