@@ -15,6 +15,8 @@ class RestaurantsController < ApplicationController
   def create
     @restaurant = Restaurant.new(restaurant_params)
     @restaurant.save
+    SendEmailJob.add_restaurant(@restaurant).deliver_later
+    flash[:notice] = "Um novo restaurante foi adicionado à lista"
     redirect_to restaurant_path(@restaurant)
   end
 
