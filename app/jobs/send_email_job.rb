@@ -2,9 +2,7 @@ class SendEmailJob < ApplicationJob
   queue_as :default
 
   def perform
-    # Do something later
-    puts "Vou executar o trabalho"
-    sleep 3
-    puts "Finalmente terminei!"
+    restaurant = Restaurant.create(restaurant_id)
+    SendEmailMailer.add_restaurant(restaurant).deliver
   end
 end
